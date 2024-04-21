@@ -1,0 +1,30 @@
+server:
+  port: 10520
+spring:
+  profiles:
+    # 服务启动
+    active: dev
+  jpa:
+    open-in-view: false
+  banner:
+    location: fay.txt
+mybatis:
+  # 配置xml的mapper的映射
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  configuration:
+    # mybatis输出到控制台
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # 驼峰命名的开关 td_user  --> tdUser
+    map-underscore-to-camel-case: true
+
+  # 配置分页插件
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+#日志级别
+logging:
+  level:
+    com.lucky: debug
