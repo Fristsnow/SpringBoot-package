@@ -42,7 +42,7 @@ public class PageHelper {
         Integer pageSize = pageDomain.getPageSize();
         if (StringUtils.isNotNull(pageNum) && StringUtils.isNotNull(pageSize)) {
             String orderBy = SqlUtil.escapeOrderBySql(pageDomain.getOrderBy());
-            com.github.pagehelper.PageHelper.startPage(pageNum, pageSize, orderBy);
+            com.github.pagehelper.PageHelper.startPage(pageNum, pageSize, true);
         } else {
             String orderBy = SqlUtil.escapeOrderBySql(pageDomain.getOrderBy());
             com.github.pagehelper.PageHelper.orderBy(orderBy);
@@ -54,7 +54,7 @@ public class PageHelper {
         Integer pageNum = pageDomain.getPageNum();
         Integer pageSize = pageDomain.getPageSize();
         if (StringUtils.isNotNull(pageNum) && StringUtils.isNotNull(pageSize)) {
-            com.github.pagehelper.PageHelper.startPage(pageNum, pageSize, orderBy);
+            com.github.pagehelper.PageHelper.startPage(pageNum, pageSize, true);
         } else {
             com.github.pagehelper.PageHelper.orderBy(orderBy);
         }
