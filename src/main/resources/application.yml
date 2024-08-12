@@ -28,3 +28,9 @@ pagehelper:
 logging:
   level:
     com.lucky: debug
+aliyun:
+  oss:
+    endpoint: "地址"
+    accessKeyId: "key"
+    accessKeySecret: "secret"
+    bucketName: "桶"
